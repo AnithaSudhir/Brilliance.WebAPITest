@@ -16,9 +16,10 @@ namespace Brilliance.WebAPITest.Controllers
             try
             {
                 var repository = new ProductsRepository();
-                
+
+                // get the reverse of the product ids in the repository                 
                 result.AddRange(repository.Reverse(productIds));
-               
+
             }
             catch (NotFoundAPIException)
             {
@@ -40,7 +41,8 @@ namespace Brilliance.WebAPITest.Controllers
             try
             {
                 var repository = new ProductsRepository();
-               
+
+                // get the result array after deleting the provided postion of the array   
                 result.AddRange(repository.Deletepart(position,productIds));
                 
             }

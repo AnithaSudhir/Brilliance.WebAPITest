@@ -13,13 +13,16 @@ namespace Brilliance.WebAPITest.Repository
         public IEnumerable<int> Reverse(int[] productIds)
         {
             try
-            {
+            {//looping until half of the array
                 for (int i = 0; i < productIds.Length / 2; i++)
                 {
+                    //storing the value of i
                     int result = productIds[i];
 
+                    //reversing the last element to first viceversa
                     productIds[i] = productIds[productIds.Length - i - 1];
 
+                    //assigning the first element to last position
                     productIds[productIds.Length - i - 1] = result;
                 }
             }
@@ -36,9 +39,10 @@ namespace Brilliance.WebAPITest.Repository
             try
             {
                 int index = position - 1;
-
+                //looping the array from first element until last
                 for (int i = 0; i < productIds.Length; i++)
                 {
+                    //skipping the element in the provided position
                     if (index != i)
                     {
                         result.Add(productIds[i]);
